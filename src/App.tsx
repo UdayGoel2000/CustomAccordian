@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordian from "./components/Accordian";
 
 const data = [
@@ -34,9 +34,22 @@ const data = [
 ];
 
 function App() {
+  const [size, setSize] = useState<string>("w-[90%]");
   return (
-    <div className="flex">
-      <div className="w-[20%]">
+    <div>
+      <select
+        name="size"
+        id="size"
+        value={size}
+        onChange={(e) => setSize(e.currentTarget.value)}
+      >
+        <option value="w-[10%]">10</option>
+        <option value="w-[30%]">30</option>
+        <option value="w-[50%]">50</option>
+        <option value="w-[70%]">70</option>
+        <option value="w-[90%]">90</option>
+      </select>
+      <div className={`${size}`}>
         <Accordian
           data={data}
           labelColor={"bg-[black]"}
