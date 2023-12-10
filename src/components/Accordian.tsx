@@ -1,15 +1,8 @@
 import { useState } from "react";
-
-type dataType = {
-  key: string;
-  value: {
-    title: string;
-    content: string;
-  };
-};
+import { DataType } from "../utils/Type";
 
 type Prop = {
-  data: dataType[];
+  data: DataType[];
   labelColor: string;
   accordianColor: string;
   textColor: string;
